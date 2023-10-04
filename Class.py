@@ -3,6 +3,12 @@ from random import choice
 
 class Manager:
     @staticmethod
+    def simple_list():
+        with open("Archive.txt") as file:
+            allStudents = file.read()
+            students = allStudents.split()
+        return str(students)
+    @staticmethod
     def random_student():
         with open("Archive.txt") as file:
             allStudents = file.read()
