@@ -9,7 +9,7 @@ import PySimpleGUI as sg
 from Layout import Menu
 # Erros
 # GUI
-from manager import Manager as Mg
+from manager import Manager
 
 ##aaa
 
@@ -23,17 +23,14 @@ def main():
         event, values = Menu.window.read()
         if event == sg.WIN_CLOSED or event == 'Cancel':  # if user closes window or clicks cancel
             break
-        if event == 'Choose a random student':
-            Mg.random_student()
+        if event == 'Choose a random student':            
+            Manager.random_student()
         if event == 'Add Student':
-            # # Menu.window.close()
-            # event, values = Menu.window3.read()
-            Mg.add_student(students, values[0])
+            newvalue = Manager.add_student(students, values[1])
+            Menu.window['textbox'].Update(newvalue, values[1])
         if event == 'Remove Student':
-            # # Menu.window.close()
-            # event, values = Menu.window4.read()
-            Mg.remove_student(students, values[0])
-
+            Manager.remove_student(students, values[2])
+            Menu.window['textbox'].Update(values[2])
     Menu.window.close()
 
 

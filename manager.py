@@ -45,5 +45,3 @@ class Manager:
             with open("Archive.txt", "w") as file1:
                 for i in newList:
                     file1.write(i+"\n")
-    # @staticmethod
-    # def change_to_page_2():
