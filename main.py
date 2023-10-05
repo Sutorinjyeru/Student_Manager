@@ -5,10 +5,12 @@
 # um aluno da lista.
 
 import PySimpleGUI as sg
+
+from Layout import Menu
 # Erros
 # GUI
-from Class import Manager as Mg
-from Layout import Menu
+from manager import Manager as Mg
+
 ##aaa
 
 def main():
@@ -22,15 +24,14 @@ def main():
         if event == sg.WIN_CLOSED or event == 'Cancel':  # if user closes window or clicks cancel
             break
         if event == 'Choose a random student':
-            Menu.window.close()
-            event, values = Menu.window2.read()
-        if event == 'Add student':
-            Menu.window.close()
-            event, values = Menu.window3.read()
+            Mg.random_student()
+        if event == 'Add Student':
+            # # Menu.window.close()
+            # event, values = Menu.window3.read()
             Mg.add_student(students, values[0])
         if event == 'Remove Student':
-            Menu.window.close()
-            event, values = Menu.window4.read()
+            # # Menu.window.close()
+            # event, values = Menu.window4.read()
             Mg.remove_student(students, values[0])
 
     Menu.window.close()

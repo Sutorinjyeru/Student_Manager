@@ -7,7 +7,7 @@ class Manager:
         with open("Archive.txt") as file:
             allStudents = file.read()
             students = allStudents.split()
-        return str(students)
+            return "\n".join(students)
     @staticmethod
     def random_student():
         with open("Archive.txt") as file:
