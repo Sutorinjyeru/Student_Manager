@@ -25,6 +25,7 @@ class Manager:
             sList.append(var)
             for name in sList:
                 file.write(name+"\n")
+            return "\n".join(sList)
 
     @staticmethod
     def remove_student(sList: list, var: str):
@@ -40,8 +41,10 @@ class Manager:
                 sList.remove(var)
                 for name in sList:
                     file.write(name+"\n")
+                return "\n".join(sList)
         except ValueError:
             print("Name not in list, try again. ")
             with open("Archive.txt", "w") as file1:
                 for i in newList:
                     file1.write(i+"\n")
+                return "\n".join(sList)

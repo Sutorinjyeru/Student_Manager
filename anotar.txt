@@ -1,2 +1,4 @@
 melhorias e alterações
+tratar de maiuscula/minuscula
+
 uso do git

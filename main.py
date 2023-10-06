@@ -24,13 +24,14 @@ def main():
         if event == sg.WIN_CLOSED or event == 'Cancel':  # if user closes window or clicks cancel
             break
         if event == 'Choose a random student':            
-            Manager.random_student()
+            random_value = Manager.random_student()
+            Menu.window['textbox2'].Update(random_value)
         if event == 'Add Student':
-            newvalue = Manager.add_student(students, values[1])
-            Menu.window['textbox'].Update(newvalue, values[1])
+            new_student = Manager.add_student(students, values[0])
+            Menu.window['textbox'].Update(new_student, values[0])
         if event == 'Remove Student':
-            Manager.remove_student(students, values[2])
-            Menu.window['textbox'].Update(values[2])
+            anti_student = Manager.remove_student(students, values[1])
+            Menu.window['textbox'].Update(anti_student, values[1])
     Menu.window.close()
 
 
